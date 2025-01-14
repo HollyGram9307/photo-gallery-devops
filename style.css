@@ -1,0 +1,8 @@
+.gallery img {
+    width: 300px; /* 统一宽度为 300 像素 */
+    height: 200px; /* 统一高度为 200 像素 */
+    object-fit: cover; /* 确保照片内容不会被拉伸，保持比例 */
+    margin: 10px; /* 为每张照片添加间距 */
+    border: 2px solid #ddd; /* 添加边框 */
+    border-radius: 8px; /* 设置圆角效果（可选） */
+}
