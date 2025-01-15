@@ -4,6 +4,9 @@ FROM nginx:latest
 # 复制项目文件到 Nginx 的默认静态文件目录
 COPY . /usr/share/nginx/html
 
+# 复制自定义 Nginx 配置文件到容器内
+COPY nginx.conf /etc/nginx/nginx.conf
+
 # 确保文件权限为 755（可读、可执行）
 RUN chmod -R 755 /usr/share/nginx/html
 

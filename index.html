@@ -3,15 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Gallery</title>
-    <link rel="stylesheet" href="style.css">
+    <title>JZ's Photo Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- 引用外部样式文件 -->
 </head>
 <body>
-    <h1>My Photo Gallery</h1>
-    <div class="gallery">
-        <img src="images/photo1.jpg" alt="Photo 1">
-        <img src="images/photo2.jpg" alt="Photo 2">
-        <img src="images/photo3.jpg" alt="Photo 3">
-    </div>
+    <h1>Justin's Photo Gallery</h1>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        // 从 /images/ 动态加载所有图片
+        fetch('/images/')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const links = [...doc.querySelectorAll('a')];
+                const gallery = document.getElementById('gallery');
+                links.forEach(link => {
+                     const href = link.getAttribute('href');
+                     console.log(`Found link: ${href}`); // 输出每个链接
+                        if (href.match(/\.(jpg|jpeg|png|gif|bmp|heic)$/i)) {
+                            console.log(`Loading image: ${href}`);
+                            const img = document.createElement('img');
+                            img.src = `/images/${href}`;
+                            img.alt = href;
+                            gallery.appendChild(img);
+                        }
+                    });
+
+            })
+            .catch(error => console.error('Error loading images:', error));
+    </script>
 </body>
 </html>
