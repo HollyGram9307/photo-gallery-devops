@@ -21,8 +21,8 @@ jobs:
       # 构建并推送镜像
       - name: Build and Push Docker Image
         run: |
-          docker build -t registry.cn-your-region.aliyuncs.com/your-repo/photo-gallery .
-          docker push registry.cn-your-region.aliyuncs.com/your-repo/photo-gallery
+          docker build -t crpi-2n3ymsn0ffeo6dfn.cn-shanghai.personal.cr.aliyuncs.com .
+          docker push crpi-2n3ymsn0ffeo6dfn.cn-shanghai.personal.cr.aliyuncs.com
 
       # 配置 kubectl
       - name: Configure kubectl
