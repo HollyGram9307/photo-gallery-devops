@@ -1,8 +1,22 @@
+/* h1: Styling for the heading */
+h1 {
+    font-family: 'Poppins', sans-serif; /* Fancy font style */
+    font-size: 3rem;                 /* Bigger size for emphasis */
+    color: #0c0c0c;                  /* Cool blue color */
+    text-align: center;              /* Center alignment */
+    margin-bottom: 20px;             /* Space between heading and gallery */
+}
+
+/* .gallery: Styling for the photo gallery container */
+.gallery {
+    column-count: 3; /* Masonry-style layout with 3 columns */
+    column-gap: 10px; /* Space between columns */
+}
+
+/* .gallery img: Styling for individual images in the gallery */
 .gallery img {
-    width: 300px; /* 统一宽度为 300 像素 */
-    height: 200px; /* 统一高度为 200 像素 */
-    object-fit: cover; /* 确保照片内容不会被拉伸，保持比例 */
-    margin: 10px; /* 为每张照片添加间距 */
-    border: 2px solid #ddd; /* 添加边框 */
-    border-radius: 8px; /* 设置圆角效果（可选） */
+    width: 100%; /* Automatically adjust image width to column */
+    margin-bottom: 10px; /* Space between images */
+    border: 2px solid #ddd; /* Light gray border around images */
+    border-radius: 8px; /* Rounded corners */
 }
