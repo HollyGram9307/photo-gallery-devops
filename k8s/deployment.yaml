@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photo-gallery
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: photo-gallery
+  template:
+    metadata:
+      labels:
+        app: photo-gallery
+    spec:
+      containers:
+      - name: photo-container
+        image: crpi-2n3ymsn0ffeo6dfn.cn-shanghai.personal.cr.aliyuncs.com/just-images/photo-gallery
+        ports:
+        - containerPort: 80
