@@ -17,5 +17,3 @@ spec:
         image: crpi-2n3ymsn0ffeo6dfn.cn-shanghai.personal.cr.aliyuncs.com/just-images/photo-gallery
         ports:
         - containerPort: 80
-      imagePullSecrets:
-      - name: acr-secret
